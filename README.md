@@ -6,4 +6,6 @@
 
 #### Question 1-2 :
 
-- the -d flag is used to run the container in the background.
+- we need to use volumes for persistent data so it can't be lost once we remove the container.
+
+#### Question 1-3 :
