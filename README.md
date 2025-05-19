@@ -8,4 +8,8 @@
 
 - we need to use volumes for persistent data so it can't be lost once we remove the container.
 
-#### Question 1-3 :
+#### Question 1-4:
+
+- When we make a Docker image for a Java app, there are two parts : building the app and running the app.a multi-stage build is used to build the app and then a final image is created with the built app.
+
+
