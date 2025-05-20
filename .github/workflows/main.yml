@@ -40,7 +40,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-simple-api-backend:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
-      # Uncomment and complete these if you have other containers
+      #Uncomment and complete these if you have other containers
       #- name: Build image and push database
       #  uses: docker/build-push-action@v6
       #  with:
