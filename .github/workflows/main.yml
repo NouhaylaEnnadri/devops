@@ -25,11 +25,13 @@ jobs:
 
       - name: Run SonarCloud Analysis
         working-directory: Lab01/simpleapi
-        run: mvn -B verify sonar:sonar \
-          -Dsonar.projectKey=NouhaylaEnnadri_devops \
-          -Dsonar.organization=NouhaylaEnnadri \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        run: |
+          mvn -B verify sonar:sonar \
+            -Dsonar.projectKey=NouhaylaEnnadri_devops \
+            -Dsonar.organization=nouhaylaennadri \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
 
 
   build-and-push-docker-image:
