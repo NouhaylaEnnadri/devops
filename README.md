@@ -1,3 +1,11 @@
+## Project Structure
+
+- `database/` — Dockerfile and configuration for PostgreSQL
+- `simpleapi/` — Backend API source and Dockerfile
+- `httpd/` — HTTPD server Dockerfile and config
+- `docker-compose.yml` — Orchestrates all services
+
+
 # Tp part 01 - Docker
 
 #### Question 1-1 :
@@ -28,10 +36,8 @@ docker-compose build
 
 =>Builds or rebuilds services defined in the compose file.
 
-
 ```bash
-docker-compose build
+docker-compose logs
 ```
 
-=>Builds or rebuilds services defined in the compose file.
-
+=>Shows logs from services.
