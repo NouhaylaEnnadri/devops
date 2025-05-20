@@ -1,0 +1,50 @@
+services:
+  database:
+    build:
+      context: ./database
+    container_name: my-postgres-container
+    environment:
+      POSTGRES_USER: noyl
+      POSTGRES_PASSWORD: 2002
+      POSTGRES_DB: db
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - backend-db-network
+    restart: always
+
+  backend:
+    build:
+      context: ./simpleapi
+    container_name: my-backend-api
+    depends_on:
+      - database
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://my-postgres-container:5432/db
+      SPRING_DATASOURCE_USERNAME: noyl
+      SPRING_DATASOURCE_PASSWORD: 2002
+    networks:
+      - backend-db-network
+      - backend-proxy-network
+    restart: always
+
+  httpd:
+    build:
+      context: ./httpd
+    container_name: my-httpd
+    depends_on:
+      - backend
+    ports:
+      - "8081:80"
+    networks:
+      - backend-proxy-network
+    restart: always
+
+networks:
+  backend-db-network:
+    driver: bridge
+  backend-proxy-network:
+    driver: bridge
+
+volumes:
+  pg_data:
