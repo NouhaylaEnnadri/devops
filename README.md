@@ -43,6 +43,18 @@ docker-compose logs
 
 # Tp 02
 
-## Question 2-1:
+#### Question 2-1:
 
-Testcontainers is a tool that helps run real services (like databases) inside Docker containers while running tests, and then cleans it up after the tests are done. and 
+Testcontainers is a tool that helps run real services (like databases) inside Docker containers while running tests, and then cleans it up after the tests are done. and
+
+#### Question 2-2:
+
+- we use GitHub Secrets to safely store sensitive data like my api token in this lab
+
+#### Question 2-3:
+
+-We use needs: test-backend to make sure the Docker image is only built and pushed if the tests pass.
+
+#### Question 2-4:
+
+- by pushing images we turn source code into portable, versioned, and ready to run application snapshots.
