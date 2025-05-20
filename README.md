@@ -5,7 +5,6 @@
 - `httpd/` — HTTPD server Dockerfile and config
 - `docker-compose.yml` — Orchestrates all services
 
-
 # Tp part 01 - Docker
 
 #### Question 1-1 :
@@ -41,3 +40,9 @@ docker-compose logs
 ```
 
 =>Shows logs from services.
+
+# Tp 02
+
+## Question 2-1:
+
+Testcontainers is a tool that helps run real services (like databases) inside Docker containers while running tests, and then cleans it up after the tests are done. and 
